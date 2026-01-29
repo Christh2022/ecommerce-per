@@ -70,6 +70,35 @@ perside-dataset-ecommerce/
 - 2 Go de RAM minimum
 - Espace disque : 500 Mo pour données et dépendances
 
+### Récupération des données
+
+Le projet utilise le dataset RetailRocket disponible sur Kaggle :
+
+1. Créer un compte sur [Kaggle](https://www.kaggle.com) si nécessaire
+
+2. Télécharger le dataset RetailRocket :
+   - URL : https://www.kaggle.com/datasets/retailrocket/ecommerce-dataset
+   - Ou via Kaggle CLI :
+   ```bash
+   kaggle datasets download -d retailrocket/ecommerce-dataset
+   ```
+
+3. Extraire les fichiers dans le dossier `data/raw/` :
+   ```bash
+   unzip ecommerce-dataset.zip -d data/raw/
+   ```
+
+4. Structure attendue après extraction :
+   ```
+   data/raw/
+   ├── events.csv                    # 2.7M événements utilisateurs
+   ├── category_tree.csv             # Hiérarchie des catégories
+   ├── item_properties_part1.csv     # Propriétés produits (partie 1)
+   └── item_properties_part2.csv     # Propriétés produits (partie 2)
+   ```
+
+Note : Si les fichiers de données ne sont pas présents, le dashboard générera automatiquement des données de démonstration pour tester l'application.
+
 ### Étapes d'installation
 
 1. Cloner ou télécharger le projet
@@ -104,19 +133,47 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+### Préparation des données
+
+Avant de lancer le dashboard, il est nécessaire de générer les fichiers de données nettoyées :
+
+1. Assurez-vous que les fichiers bruts sont dans `data/raw/` (voir section "Récupération des données")
+
+2. Exécuter le script de nettoyage et d'enrichissement des données :
+
+```bash
+python eda_analysis.py
+```
+
+Ce script va :
+- Charger les données brutes depuis `data/raw/`
+- Nettoyer et enrichir les événements utilisateurs
+- Calculer les features agrégées par utilisateur et par produit
+- Générer les fichiers dans `data/clean/` :
+  - `events_enriched.csv` : Événements avec variables dérivées
+  - `user_features.csv` : Caractéristiques par utilisateur
+  - `product_features.csv` : Caractéristiques par produit
+  - `category_hierarchy.csv` : Hiérarchie des catégories
+
+Durée estimée : 5-15 minutes selon la taille des données
+
+Note : Si ce script n'est pas exécuté, le dashboard générera automatiquement des données de démonstration.
+
 ## Utilisation
 
 ### Lancement du dashboard
 
 1. Activer l'environnement virtuel
 
-2. Lancer l'application
+2. S'assurer que les données ont été préparées (voir "Préparation des données")
+
+3. Lancer l'application
 
 ```bash
 python dashboard_app.py
 ```
 
-3. Ouvrir le navigateur à l'adresse
+4. Ouvrir le navigateur à l'adresse
 
 ```
 http://localhost:8050/
