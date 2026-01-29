@@ -12,6 +12,8 @@ color: #ffffff
 
 **Analyse interactive et optimisation de la conversion**
 
+Une plateforme complète de visualisation et d'analyse de données e-commerce permettant de transformer 2.7 millions d'événements en insights actionnables. Ce dashboard offre une vue à 360° du parcours client, du comportement utilisateur et des performances produits, avec des outils de tests A/B pour valider statistiquement vos initiatives business.
+
 ---
 
 **Projet** : Plateforme de visualisation de données e-commerce
@@ -86,6 +88,48 @@ color: #ffffff
 - Simulateur de tests statistiques
 - Calculs : z-test, p-value, intervalles de confiance
 - Projection d'impact business (ROI, payback)
+
+---
+
+<!-- Slide 3bis : Visualisations Performance -->
+
+## Visualisations : Performance
+
+### Distribution des Événements
+
+![](outputs/event_distribution.png)
+
+---
+
+## Visualisations : Performance (suite)
+
+### Heatmap Horaire
+
+![](outputs/hourly_heatmap.png)
+
+---
+
+## Visualisations : Produits
+
+### Top 20 Produits par Performance
+
+![](outputs/top_products.png)
+
+---
+
+## Visualisations : Funnel
+
+### Funnel de Conversion
+
+![](outputs/conversion_funnel.png)
+
+---
+
+## Visualisations : Métriques
+
+### Métriques de Session
+
+![](outputs/session_metrics.png)
 
 ---
 
