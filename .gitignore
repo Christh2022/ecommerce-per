@@ -1,0 +1,95 @@
+# Données volumineuses
+data/raw/*.csv
+data/clean/*.csv
+data/clean/*.json
+*.csv
+*.xlsx
+*.xls
+
+# Sorties et exports
+outputs/
+*.png
+*.jpg
+*.jpeg
+*.pdf
+*.html
+
+# Environnements virtuels Python
+venv/
+env/
+ENV/
+.venv/
+.env/
+virtualenv/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Cache
+.cache/
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.cover
+*.log
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Variables d'environnement
+.env
+.env.local
+.env.*.local
+
+# Bases de données
+*.db
+*.sqlite
+*.sqlite3
+
+# Redis
+dump.rdb
+
+# Logs
+logs/
+*.log
+
+# Fichiers temporaires
+tmp/
+temp/
+*.tmp
+
+# Documentation générée
+docs/_build/
+site/
